@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+:root {
+  --blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  --bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --gray: hsl(215, 32%, 27%);
+  --foreground: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+.App {
+  position: relative;
+  height: 100vh;
+  background-color: var(--bg);
+  color: var(--foreground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card {
+  background-color: var(--card-bg);
+  border-radius: 14px;
+  padding: 20px;
+  width: 320px;
+  height: auto;
+  z-index: 100;
+  box-shadow: 0 25px 0 15px hsla(217, 54%, 11%, 0.9), 0 15px 0 40px hsla(216, 50%, 16%, 0.3);
+}
+
+.image_container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.image_container .img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.toggleView {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(178, 100%, 50%, 0.3);
+}
+
+.toggleView img {
+  height: 32px;
+  width: 32px;
+}
+
+.image_container img:hover ~ .toggleView {
+  cursor: pointer;
+  display: flex;
+}
+
+.description {
+  margin: 10px 0;
+}
+
+.description .title {
+  margin-top: 20px;
+  font-weight: 800;
+}
+
+.description .details {
+  margin-top: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  color: var(--blue);
+}
+
+.description .pricing {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.description .pricing p {
+  display: flex;
+  align-items: center;
+}
+
+.pricing p img {
+  margin-right: 7px;
+}
+
+.pricing .price {
+  color: var(--cyan);
+}
+
+.pricing .time {
+  font-weight: 300;
+  color: var(--blue);
+}
+
+hr {
+  border-color: var(--blue);
+  opacity: 0.4;
+}
+
+.author_details {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.author_details .profile {
+  height: 32px;
+  width: 32px;
+}
+
+.author_details .profile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid var(--foreground);
+  border-radius: 50%;
+}
+
+.author_details p {
+  margin-left: 14px;
+  color: var(--blue);
+  font-weight: 300;
+}
+
+.author_details p span {
+  color: var(--foreground);
+  font-weight: 400;
+}
+
+.title:hover,
+.author:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+
+@media (max-width: 480px) {
+  .Card {
+    box-shadow: 0 0 0 30px hsla(217, 54%, 11%, 0.9);
+  }
+}
